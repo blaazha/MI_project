@@ -17,4 +17,5 @@ def plot_template(title: str):
     plt.ylabel('Hodnota funkce')
     plt.title(title)
     plt.grid(True)
+    plt.savefig('figures/' + title + '.png')
     plt.show()
