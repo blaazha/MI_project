@@ -3,6 +3,7 @@ import searches
 import utils
 import matplotlib.pyplot as plt
 from statistics import describe_run
+from simulated_annealing import execute_sa
 
 RANDOM_SEARCH_ITERATIONS = 10000
 
@@ -125,4 +126,26 @@ rs_avg_sch_10d = utils.average_score(rs_results)
 plt.plot([point[0] for point in rs_avg_sch_10d],
          [point[1] for point in rs_avg_sch_10d], marker='', linestyle='-')
 utils.plot_template('Průměr vyhledávání RS Schweffel (10D)')
+
+
+def plot_avgs(rs_avg, sa_avg, title: str):
+    plt.plot([point[0] for point in rs_avg],
+             [point[1] for point in rs_avg], marker='', linestyle='-', label='Random search')
+    plt.plot([point[0] for point in sa_avg],
+             [point[1] for point in sa_avg], marker='', linestyle='-', label='Simulated annealing')
+    plt.legend()
+    utils.plot_template('Průměry ' + title)
+
+sa_avg_dej1_5d = execute_sa(functions.dejong_1st, 5, 'SA Dejong 1 5D')
+plot_avgs(rs_avg_dj1_5d, sa_avg_dej1_5d, 'DJ1 5D')
+sa_avg_dej1_10d = execute_sa(functions.dejong_1st, 10, 'SA Dejong 1 10D')
+plot_avgs(rs_avg_dj1_10d, sa_avg_dej1_10d, 'DJ1 10D')
+sa_avg_dej2_5d = execute_sa(functions.dejong_2nd, 5, 'SA Dejong 2 5D')
+plot_avgs(rs_avg_dj2_5d, sa_avg_dej2_5d, 'DJ2 5D')
+sa_avg_dej2_10d = execute_sa(functions.dejong_2nd, 10, 'SA Dejong 2 10D')
+plot_avgs(rs_avg_dj2_10d, sa_avg_dej2_10d, 'DJ2 10D')
+sa_avg_sch_5d = execute_sa(functions.schweffel, 5, 'SA Schweffel 5D')
+plot_avgs(rs_avg_sch_5d, sa_avg_sch_5d, 'Schweffel 5D')
+sa_avg_sch_10d = execute_sa(functions.schweffel, 10, 'SA Schweffel 10D')
+plot_avgs(rs_avg_sch_10d, sa_avg_sch_10d, 'Schweffel 10D')
 

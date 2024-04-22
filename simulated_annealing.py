@@ -21,10 +21,10 @@ def execute_sa(func, dimensions: int, title: str):
     print(title + " " + describe_run(results))
     return avg_res
 
-
-sa_avg_dej1_5d = execute_sa(functions.dejong_1st, 5, 'SA Dejong 1 5D')
-sa_avg_dej1_10d = execute_sa(functions.dejong_1st, 10, 'SA Dejong 1 10D')
-sa_avg_dej2_5d = execute_sa(functions.dejong_2nd, 5, 'SA Dejong 2 5D')
-sa_avg_dej2_10d = execute_sa(functions.dejong_2nd, 10, 'SA Dejong 2 10D')
-sa_avg_sch_5d = execute_sa(functions.schweffel, 5, 'SA Schweffel 5D')
-sa_avg_sch_10d = execute_sa(functions.schweffel, 10, 'SA Schweffel 10D')
+if __name__ == '__main__':
+    sa_avg_dej1_5d = execute_sa(functions.dejong_1st, 5, 'SA Dejong 1 5D')
+    sa_avg_dej1_10d = execute_sa(functions.dejong_1st, 10, 'SA Dejong 1 10D')
+    sa_avg_dej2_5d = execute_sa(functions.dejong_2nd, 5, 'SA Dejong 2 5D')
+    sa_avg_dej2_10d = execute_sa(functions.dejong_2nd, 10, 'SA Dejong 2 10D')
+    sa_avg_sch_5d = execute_sa(functions.schweffel, 5, 'SA Schweffel 5D')
+    sa_avg_sch_10d = execute_sa(functions.schweffel, 10, 'SA Schweffel 10D')
