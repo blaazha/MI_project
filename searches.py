@@ -22,8 +22,8 @@ def random_search(func, bounds, dimensions, iterations):
 
 def simulated_annealing(func, bounds, dimensions):
     # PARAMS
-    T0 = 50
-    T_decrease = 0.044
+    T0 = 12
+    T_decrease = 0.011999
     metropolis_calls = 10
     iterations = 1000
     #

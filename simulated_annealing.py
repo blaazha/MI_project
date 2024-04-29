@@ -21,6 +21,7 @@ def execute_sa(func, dimensions: int, title: str):
     print(title + " " + describe_run(results))
     return avg_res
 
+
 if __name__ == '__main__':
     sa_avg_dej1_5d = execute_sa(functions.dejong_1st, 5, 'SA Dejong 1 5D')
     sa_avg_dej1_10d = execute_sa(functions.dejong_1st, 10, 'SA Dejong 1 10D')
